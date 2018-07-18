@@ -1,0 +1,61 @@
+
+int ir_rs =10;
+int ir_ls =9;
+int m1 =   7;
+int m2 =   6;
+int m3 =   5;
+int m4 =   4;
+int en =   3;
+
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(ir_rs,INPUT);
+  pinMode(ir_ls,INPUT);
+  pinMode(m1,OUTPUT);
+  pinMode(m2,OUTPUT);
+  pinMode(m3,OUTPUT);
+  pinMode(m4,OUTPUT);
+  pinMode(en,OUTPUT);
+
+}
+void loop()
+{
+digitalWrite(en,HIGH);
+
+  if(digitalRead(ir_rs)==HIGH && digitalRead(ir_ls)==HIGH)//FORWARD
+  {
+    Serial.println("F");
+    digitalWrite(m1,HIGH);
+    digitalWrite(m2,LOW);
+    digitalWrite(m3,HIGH);
+    digitalWrite(m4,LOW);
+  }
+  if(digitalRead(ir_rs)==HIGH && digitalRead(ir_ls)==LOW)//RIGHT
+  {
+    Serial.println("R");
+    digitalWrite(m1,LOW);
+    digitalWrite(m2,LOW);
+    digitalWrite(m3,HIGH);
+    digitalWrite(m4,LOW);
+  }
+  if(digitalRead(ir_rs)==LOW && digitalRead(ir_ls)==HIGH)//LEFT
+  {
+    Serial.println("L");
+    digitalWrite(m1,HIGH);
+    digitalWrite(m2,LOW);
+    digitalWrite(m3,LOW);
+    digitalWrite(m4,LOW);
+  }
+  if(digitalRead(ir_rs)==LOW && digitalRead(ir_ls)==LOW)//OFF
+  {
+    Serial.println("OFF");
+    digitalWrite(m1,LOW);
+    digitalWrite(m2,LOW);
+    digitalWrite(m3,LOW);
+    digitalWrite(m4,LOW);
+  }
+}
+
+
