@@ -1,7 +1,9 @@
 bluetooth robo using arduino
-hiii guys hope these pictures can help you guys to do that project if u have any doubt kindly post in my blog..
+
 
 to see the video goto
+
+this project completed at 2013 january. i post this for  beginners and my juniors 
 
 https://m.youtube.com/watch?v=LlYT-fOkJn8
 
